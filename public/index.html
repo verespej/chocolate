@@ -5,9 +5,16 @@
 <head>
 </head>
 <body>
-	<img src='images/chocolate-bar.gif' /><br />
-	<br />
-	<div id='fb-root'></div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xs-12'>
+				<img src='images/chocolate-bar.gif' style='width:100%; max-width:382px;' /><br />
+				<br />
+				<div id='fb-root'></div>
+			</div>
+		</div>
+	</div>
+
 	<script>
 		window.fbAsyncInit = function() {
 		FB.init({
@@ -44,6 +51,8 @@
 			});
 		}
 	</script>
-	<fb:login-button show-faces='false' width='200' data-size='xlarge' max-rows='1'></fb:login-button>	
+	<fb:login-button show-faces='false' width='200' data-size='xlarge' max-rows='1'></fb:login-button>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 </body>
 </html>
