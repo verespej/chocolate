@@ -1,8 +1,10 @@
-var app = require('express')();
+var express = require('express');
+var compression = require('compression')();
 
-app.get('/', function(req, res) {
-	res.send('Hello!');
-});
+var app = express();
+
+app.use(express.static(__dirname + '/public'));
+app.use(compression);
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {

@@ -8,7 +8,8 @@
 		"url": "https://github.com/hverespej/chocolate.git"
 	},
 	"dependencies": {
-		"express": "4.0.x"
+		"express": "4.0.x",
+		"compression": "1.0.x"
 	},
 	"engines": {
 		"node": "0.10.x"
