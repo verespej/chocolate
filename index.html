@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+<head>
+</head>
+<body>
+	<img src='images/chocolate-bar.gif' /><br />
+	<br />
+	<div id='fb-root'></div>
+	<script>
+		window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '229024550637463',
+			status     : true, // check login status
+			cookie     : true, // enable cookies to allow the server to access the session
+			xfbml      : true  // parse XFBML
+		});
+
+		FB.Event.subscribe('auth.authResponseChange', function(response) {
+			if (response.status === 'connected') {
+				testAPI();
+			} else if (response.status === 'not_authorized') {
+				FB.login(function(r) {}, { scope: 'email' });
+			} else {
+				FB.login(function(r) {}, { scope: 'email' });
+			}
+		});
+		};
+
+		// Load the SDK asynchronously
+		(function(d){
+		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = '//connect.facebook.net/en_US/all.js';
+		 ref.parentNode.insertBefore(js, ref);
+		}(document));
+
+		function testAPI() {
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function(response) {
+				console.log('Good to see you, ' + response.name + '.');
+			});
+		}
+	</script>
+	<fb:login-button show-faces='false' width='200' data-size='xlarge' max-rows='1'></fb:login-button>	
+</body>
+</html>
