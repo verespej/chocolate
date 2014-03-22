@@ -1,5 +1,29 @@
 body {
 	background-color: #EB99D6;
 	text-align: center;
+	padding-bottom: 20px;
+}
+
+div.header {
+	background-color: blue;
+	color: white;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+div.header-menu-button {
+	margin-top: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+div.header-menu-button-line {
+	background-color: white;
+	width: 30px;
+	height: 6px;
+	margin-bottom: 4px;
 }
 

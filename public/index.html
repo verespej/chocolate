@@ -1,58 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
-	<link rel='stylesheet' type='text/css' href='style.css'>
 <head>
+	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
+	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
+	<div class='container header'>
+		<div class='row'>
+			<div class='col-xs-offset-1 col-xs-10'>
+				Chocolate
+			</div>
+			<div class='col-xs-1'>
+				<div class='header-menu-button'>
+					<div class='header-menu-button-line'></div>
+					<div class='header-menu-button-line'></div>
+					<div class='header-menu-button-line'></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class='container'>
 		<div class='row'>
 			<div class='col-xs-12'>
 				<img src='images/chocolate-bar.gif' style='width:100%; max-width:382px;' /><br />
 				<br />
-				<div id='fb-root'></div>
+				<a href='#' id='loginBtn' class='btn btn-xlarge btn-primary'>Login with Facebook</a>
+			</div>
+		</div>
+	</div>
+	<div class='container'>
+		<div class='row'>
+			<div class='col-xs-offset-4 col-xs-4'>
+				<hr />
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col-xs-offset-1 col-xs-10'>
+				<input type='text' placeholder='name'>
+			</div>
+		</div>
+		<br />
+		<div class='row'>
+			<div class='col-xs-offset-1 col-xs-10'>
+				<input type='text' placeholder='password'>
 			</div>
 		</div>
 	</div>
 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='fb.js'></script>
 	<script>
-		window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '229024550637463',
-			status     : true, // check login status
-			cookie     : true, // enable cookies to allow the server to access the session
-			xfbml      : true  // parse XFBML
+		$('#loginBtn').click(doFbLogin);
+		registerFb(function() {
+			$('#loginBtn').unbind('click');
+			$('#loginBtn').text('Create chocolate');
+			$('#loginBtn').click(function() {
+				window.location.href = 'who.html';
+			});
 		});
 
-		FB.Event.subscribe('auth.authResponseChange', function(response) {
-			if (response.status === 'connected') {
-				testAPI();
-			} else if (response.status === 'not_authorized') {
-				FB.login(function(r) {}, { scope: 'email' });
-			} else {
-				FB.login(function(r) {}, { scope: 'email' });
-			}
-		});
-		};
-
-		// Load the SDK asynchronously
-		(function(d){
-		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-		 if (d.getElementById(id)) {return;}
-		 js = d.createElement('script'); js.id = id; js.async = true;
-		 js.src = '//connect.facebook.net/en_US/all.js';
-		 ref.parentNode.insertBefore(js, ref);
-		}(document));
-
-		function testAPI() {
-			console.log('Welcome!  Fetching your information.... ');
-			FB.api('/me', function(response) {
-				console.log('Good to see you, ' + response.name + '.');
+		function doFbLogin() {
+			loginToFB(function(success) {
+				if (success) {
+					FB.api('/me', function(response) {
+						console.log('Login succeeded: ' + response.name + ' (' + response.email + ')');
+						window.location.href = 'who.html';
+					});
+				} else {
+					console.log('Login failed');
+				}
 			});
 		}
 	</script>
-	<fb:login-button show-faces='false' width='200' data-size='xlarge' max-rows='1'></fb:login-button>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 </body>
 </html>
