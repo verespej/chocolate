@@ -5,13 +5,13 @@ body {
 
 div.header {
 	background-color: white;
-	color: blue;
+	color: #1996a1;
 	text-align: center;
 	width: 100%;
 	margin-bottom: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-bottom: solid 2px blue;
+	border-bottom: solid 2px #a996a1;
 	font: 34px arial, sans-serif;
 	z-index: 100;
 }
@@ -23,7 +23,7 @@ div.header-menu-button {
 }
 
 div.header-menu-button-line {
-	background-color: blue;
+	background-color: #1996a1;
 	width: 30px;
 	height: 6px;
 	margin-bottom: 4px;
@@ -34,7 +34,7 @@ input[type=text], textarea {
 	height: 50px;
 	font-size: 17px;
 	padding: 10px;
-	color: orange;
+	color: #f9d04e;
 	border-width:1px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -51,7 +51,7 @@ select {
 	height: 50px;
 	font-size: 17px;
 	padding: 10px;
-	color: orange;
+	color: #f9d04e;
 	border-width:1px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -64,16 +64,16 @@ select {
 }
 
 ::-webkit-input-placeholder {
-	color: orange;
+	color: #f9d04e;
 }
 :-moz-placeholder {
-	color: orange;
+	color: #f9d04e;
 }
 ::-moz-placeholder {
-	color: orange;
+	color: #f9d04e;
 }
 :-ms-input-placeholder {
-	color: orange;
+	color: #f9d04e;
 }
 
 .btn {
@@ -89,5 +89,42 @@ div.divide-line {
 	height: 1px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+}
+
+.coco-bg-red {
+	background-color: #fe6b61;
+}
+.coco-text-red {
+	color: #fe6b61;
+}
+.coco-bg-yellow {
+	background-color: #f9d04e;
+}
+.coco-text-yellow {
+	color: #f9d04e;
+}
+.coco-bg-blue {
+	background-color: #1996a1;
+}
+.coco-text-blue {
+	color: #1996a1;
+}
+.coco-bg-beige {
+	background-color: #e6d0b9;
+}
+.coco-text-beige {
+	color: #e6d0b9;
+}
+.coco-bg-brown {
+	background-color: #ae956c;
+}
+.coco-text-brown {
+	color: #ae956c;
+}
+.coco-bg-darkbrown {
+	background-color: #715c49;
+}
+.coco-text-darkbrown {
+	color: #715c49;
 }
 
