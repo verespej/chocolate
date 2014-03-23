@@ -11,7 +11,7 @@ img.selection-image {
 	width: 100%;
 }
 
-div.btn {
+.btn {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -20,6 +20,5 @@ div.btn {
 	-moz-border-radius: 0px;
 	border-radius: 0px;
 	text-align: right;
-	color: white;
 }
 

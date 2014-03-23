@@ -13,6 +13,7 @@ div.header {
 	padding-bottom: 10px;
 	border-bottom: solid 2px blue;
 	font: 34px arial, sans-serif;
+	z-index: 100;
 }
 
 div.header-menu-button {
@@ -82,10 +83,11 @@ select {
 	color: orange;
 }
 
-div.btn {
+.btn {
 	width: 100%;
 	height: 50px;
 	padding-top: 12px;
 	font-size: 17px;
+	color: white;
 }
 
