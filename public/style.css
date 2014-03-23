@@ -1,27 +1,29 @@
 body {
-	background-color: #EB99D6;
+	background-color: white;
 	text-align: center;
 	padding-bottom: 20px;
 }
 
 div.header {
-	background-color: blue;
-	color: white;
+	background-color: white;
+	color: blue;
 	text-align: center;
 	width: 100%;
 	margin-bottom: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	border-bottom: solid 2px blue;
+	font: 34px arial, sans-serif;
 }
 
 div.header-menu-button {
-	margin-top: 5px;
+	margin-top: 4px;
 	width: 100%;
 	text-align: center;
 }
 
 div.header-menu-button-line {
-	background-color: white;
+	background-color: blue;
 	width: 30px;
 	height: 6px;
 	margin-bottom: 4px;

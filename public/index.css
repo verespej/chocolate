@@ -1,0 +1,72 @@
+body {
+	background-image: url("images/chocolate-assortment.jpg");
+}
+
+div.divide-line {
+	background-color: white;
+	height: 1px;
+	margin-top: 19px;
+	margin-bottom: 19px;
+}
+
+div.login-btn {
+	width: 100%;
+	height: 50px;
+	padding-top: 12px;
+	font-size: 17px;
+}
+
+input[type=text] {
+	width: 100%;
+	height: 50px;
+	font-size: 17px;
+	padding: 10px;
+	color: orange;
+	border-width:1px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-style: solid;
+	border-bottom-color: #b3b3b3;
+	border-left-color: #b3b3b3;
+	border-right-color: #b3b3b3;
+	border-top-color: #b3b3b3;
+}
+
+::-webkit-input-placeholder {
+	color: orange;
+}
+:-moz-placeholder {
+	color: orange;
+}
+::-moz-placeholder {
+	color: orange;
+}
+:-ms-input-placeholder {
+	color: orange;
+}
+
+.login-btn-left {
+	background-color: purple;
+	color: white;
+	height: 60px;
+	-webkit-border-radius: 3px 0px 0px 3px;
+	-moz-border-radius: 3px 0px 0px 3px;
+	border-radius: 3px 0px 0px 3px;
+	-webkit-background-clip: padding-box; 
+	-moz-background-clip:    padding; 
+	background-clip:         padding-box;
+}
+
+.login-btn-right {
+	background-color: blue;
+	color: white;
+	height: 60px;
+	-webkit-border-radius: 0px 3px 3px 0px;
+	-moz-border-radius: 0px 3px 3px 0px;
+	border-radius: 0px 3px 3px 0px;
+	-webkit-background-clip: padding-box; 
+	-moz-background-clip:    padding; 
+	background-clip:         padding-box;
+}
+
