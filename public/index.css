@@ -2,13 +2,6 @@ body {
 	background-image: url("images/chocolate-assortment.jpg");
 }
 
-div.divide-line {
-	background-color: white;
-	height: 1px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
 .login-btn-left {
 	background-color: purple;
 	color: white;

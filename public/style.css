@@ -29,7 +29,7 @@ div.header-menu-button-line {
 	margin-bottom: 4px;
 }
 
-input[type=text] {
+input[type=text], textarea {
 	width: 100%;
 	height: 50px;
 	font-size: 17px;
@@ -82,5 +82,12 @@ select {
 	padding-top: 12px;
 	font-size: 17px;
 	color: white;
+}
+
+div.divide-line {
+	background-color: white;
+	height: 1px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 

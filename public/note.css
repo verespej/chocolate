@@ -1,0 +1,11 @@
+body {
+	background-image: url('images/chocolate-assortment.jpg');
+}
+
+div.btn {
+	color: white;
+}
+
+textarea {
+	height: 150px;
+}

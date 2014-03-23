@@ -5,7 +5,7 @@
 	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
 	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
 	<link rel='stylesheet' type='text/css' href='style.css'>
-	<link rel='stylesheet' type='text/css' href='who.css'>
+	<link rel='stylesheet' type='text/css' href='note.css'>
 </head>
 <body>
 	<div class='container header'>
@@ -25,41 +25,37 @@
 	<div class='container'>
 		<div class='row'>
 			<div class='col-xs-offset-1 col-xs-10'>
-				<div style='color:blue;font:bold 30px arial, sans-serif;'>
-					Who's the lucky recipient?
+				<div style='color:blue;font:bold 24px arial, sans-serif;'>
+					Would you like to name your creation?
 				</div>
 			</div>
 		</div>
-		<div style='height:25px;'></div>
-		<div class='row'>
-			<div class='col-xs-offset-1 col-xs-10'>
-				<select>
-					<option selected>Me
-					<option>Mom
-					<option>Dad
-					<option>Katrina
-					<option>[Add New]
-				</select>
-			</div>
-		</div>
 		<div style='height:10px;'></div>
 		<div class='row'>
 			<div class='col-xs-offset-1 col-xs-10'>
-				<input type='text' id='address' placeholder='Enter address' value='500 Yale Ave N, Seattle, WA 98109'>
-			</div>
-		</div>
-		<div style='height:10px;'></div>
-		<div class='row'>
-			<div class='col-xs-offset-1 col-xs-10'>
-				<img src='images/map.png' style='width:100%;' />
+				<input type='text' placeholder='Name'>
 			</div>
 		</div>
 		<div style='height:25px;'></div>
 		<div class='row'>
 			<div class='col-xs-offset-1 col-xs-10'>
-				<a href='packaging.html' class='btn' style='background-color:red;width:47%;'>&lt; Back</a>
+				<div style='color:blue;font:bold 24px arial, sans-serif;'>
+					Would you like to send a note?
+				</div>
+			</div>
+		</div>
+		<div style='height:10px;'></div>
+		<div class='row'>
+			<div class='col-xs-offset-1 col-xs-10'>
+				<textarea type='text' placeholder='Note'></textarea>
+			</div>
+		</div>
+		<div style='height:25px;'></div>
+		<div class='row'>
+			<div class='col-xs-offset-1 col-xs-10'>
+				<a href='who.html' class='btn' style='background-color:red;width:47%;'>&lt; Back</a>
 				<div style='width:1%;display:inline-block;'></div>
-				<a href='note.html' class='btn' style='background-color:green;width:47%;'>Next &gt;</a>
+				<a href='confirm.html' class='btn' style='background-color:green;width:47%;'>Next &gt;</a>
 			</div>
 		</div>
 		<div style='height:20px;'></div>
@@ -67,20 +63,5 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-
-	<script>
-		$('select').change(function() {
-			var text = $('select option:selected').text().trim();
-			if (text === 'Me') {
-				$('#address').val('500 Yale Ave N, Seattle, WA 98109');
-			} else if (text === 'Mom' || text === 'Dad') {
-				$('#address').val('1335 Carlsbad Blvd, Oceanside, CA 92054');
-			} else if (text === 'Katrina') {
-				$('#address').val('111 NE 41st St, Seattle, WA 98105');
-			} else {
-				$('#address').val('');
-			}
-		});
-	</script>
 </body>
 </html>
