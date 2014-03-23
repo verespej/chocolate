@@ -3,6 +3,7 @@
 <head>
 	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
 	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 	<link rel='stylesheet' type='text/css' href='style.css'>
 	<link rel='stylesheet' type='text/css' href='flavors.css'>
 </head>
@@ -50,8 +51,8 @@
 				<img src='images/coconut.jpg' class='object-pic' />
 			</div>
 
-			<div class='static-object' style='bottom:75px;'>
-				<img src='images/double-boiler-bottom.gif' style='width:90%;' />
+			<div id='active-zone' class='static-object' style='bottom:75px;'>
+				<img src='images/double-boiler-bottom-2.gif' style='width:90%;' />
 			</div>
 			<div class='static-object' style='bottom:10px;'>
 				<a href='choose-base.html' class='btn' style='width:45%;background-color:red;'>&lt; Back</a>
@@ -61,6 +62,46 @@
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+	<script>
+		function intersect(obj1, obj2) {
+			var top1 = obj1.position().top;
+			var bottom1 = top1 + obj1.height();
+			var left1 = obj1.position().left;
+			var right1 = left1 + obj1.width();;
+			var top2 = obj2.position().top;
+			var bottom2 = top2 + obj2.height();
+			var left2 = obj2.position().left;
+			var right2 = left2 + obj2.width();
+
+			var overlap = 
+				(left1 <= right2) && 
+				(left2 <= right1) && 
+				(top1 <= bottom2) && 
+				(top2 <= bottom1);
+
+			return overlap;
+		}
+
+		$(function() {
+			$('.interactive-object').draggable({
+				drag: function(ev, ui) {
+					if (intersect(ui.helper, $('#active-zone'))) {
+						ui.helper.find('img').css('border', 'solid 2px yellow');
+					} else {
+						ui.helper.find('img').css('border', 'none');
+					}
+				},
+				stop: function(ev, ui) {
+					if (intersect(ui.helper, $('#active-zone'))) {
+						ui.helper.find('img').css('border', 'solid 2px green');
+					}
+				}
+			});
+		});
+	</script>
+
 </body>
 </html>
