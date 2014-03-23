@@ -1,0 +1,25 @@
+div.header {
+	margin-bottom: 0px;
+}
+
+div.selection {
+	width: 100%;
+	position: relative;
+}
+
+img.selection-image {
+	width: 100%;
+}
+
+div.btn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 61.8%;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	text-align: right;
+	color: white;
+}
+

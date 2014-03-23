@@ -52,7 +52,7 @@
 			$('#loginBtn').unbind('click');
 			$('#loginBtn').text('Create chocolate');
 			$('#loginBtn').click(function() {
-				window.location.href = 'who.html';
+				window.location.href = 'choose-base.html';
 			});
 		});
 
@@ -61,7 +61,7 @@
 				if (success) {
 					FB.api('/me', function(response) {
 						console.log('Login succeeded: ' + response.name + ' (' + response.email + ')');
-						window.location.href = 'who.html';
+						window.location.href = 'choose-base.html';
 					});
 				} else {
 					console.log('Login failed');
