@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name='viewport' content='width=device-width, user-scalable=no initial-scale=1'>
+	<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+	<link rel='stylesheet' type='text/css' href='style.css'>
+	<link rel='stylesheet' type='text/css' href='packaging.css'>
+</head>
+<body>
+	<div class='container header'>
+		<div class='row'>
+			<div class='col-xs-offset-2 col-xs-8'>
+				Coco
+			</div>
+			<div class='col-xs-2'>
+				<div class='header-menu-button'>
+					<div class='header-menu-button-line'></div>
+					<div class='header-menu-button-line'></div>
+					<div class='header-menu-button-line'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='interaction-frame'>
+		<div class='interaction-space'>
+			<div class='static-object' style='bottom:0;'>
+				<img src='images/wood-grain.jpg' style='width:100%;' />
+			</div>
+
+			<div class='interactive-object' style='top:84px;left:33.3%;'>
+				<img src='images/chocolate-cartoon.png' class='object-pic' />
+			</div>
+
+			<div class='active-zone static-object' style='bottom:85px;left:6%;width:40%;'>
+				<img src='images/box-cube.png' style='width:100%;' />
+			</div>
+			<div class='active-zone static-object' style='bottom:85px;right:8%;width:40%;'>
+				<img src='images/box-hex.png' style='width:100%;' />
+			</div>
+			<div class='static-object' style='bottom:10px;'>
+				<a href='mixins.html' class='btn' style='width:45%;background-color:red;'>&lt; Back</a>
+				<a href='who.html' class='btn' style='width:45%;background-color:green;'>Next &gt;</a>
+			</div>
+		</div>
+	</div>
+
+	<script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+	<script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js'></script>
+	<script src='js/jquery.ui.touch-punch.min.js'></script>
+	<script src='//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js'></script>
+
+	<script>
+		function intersect(obj1, obj2) {
+			var top1 = obj1.position().top;
+			var bottom1 = top1 + obj1.height();
+			var left1 = obj1.position().left;
+			var right1 = left1 + obj1.width();;
+			var top2 = obj2.position().top;
+			var bottom2 = top2 + obj2.height();
+			var left2 = obj2.position().left;
+			var right2 = left2 + obj2.width();
+
+			var overlap = 
+				(left1 <= right2) && 
+				(left2 <= right1) && 
+				(top1 <= bottom2) && 
+				(top2 <= bottom1);
+
+			return overlap;
+		}
+
+		$(function() {
+			$('.interactive-object').draggable({
+				drag: function(ev, ui) {
+					var intersection = false;
+					$('.active-zone').each(function(index, item) {
+						if (intersect(ui.helper, $(this))) {
+							intersection = true;
+							return false;
+						}
+					});
+					if (intersection) {
+						ui.helper.find('img').css('border', 'solid 2px yellow');
+					} else {
+						ui.helper.find('img').css('border', 'none');
+					}
+				},
+				stop: function(ev, ui) {
+					var intersection = false;
+					$('.active-zone').each(function(index, item) {
+						if (intersect(ui.helper, $(this))) {
+							intersection = true;
+							return false;
+						}
+					});
+					if (intersection) {
+						ui.helper.find('img').css('border', 'solid 2px green');
+					}
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>
